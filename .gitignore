@@ -1,0 +1,15 @@
+# Build output
+build/
+out/
+cmake-build-*/
+compile_commands.json
+
+# IDE and local configuration
+.vscode/
+.idea/
+*.user
+CMakeUserPresets.json
+
+# OS metadata
+.DS_Store
+Thumbs.db
