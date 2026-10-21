@@ -165,6 +165,7 @@ style: apply clang-format to src
 ### Workflow
 
 - Commit only completed, verified work. No work-in-progress commits unless the user asks for one.
+- Never end a response with uncommitted task changes. Before finishing any response that modified or added files, commit the completed work. `git status --short` must show no task-related modifications, staged changes, or untracked files; ignored build output is fine.
 - Small single-commit changes may go directly on `main`. Use a short-lived topic branch for multi-commit or risky work: `<type>/<kebab-case-summary>`, e.g. `feat/double-jump`.
 - Keep history linear. Rebase topic branches onto `main`; do not create merge commits.
 - Never rewrite or force-push `main`. On an unpushed branch of your own, `--force-with-lease` is acceptable.
@@ -185,4 +186,5 @@ Before considering a change complete:
 - [ ] Graphics/input changes were smoke-tested, or the lack of a display was reported.
 - [ ] README, presets, or CI were updated if behavior or commands changed.
 - [ ] `git diff` contains only task-related changes and no generated files.
-- [ ] The commit, if made, follows the commit rules above.
+- [ ] All task changes are committed before the response ends; `git status --short` shows no unexpected files.
+- [ ] The commit follows the commit rules above.
